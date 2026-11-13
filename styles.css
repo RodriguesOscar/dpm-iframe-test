@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&display=swap");
+
+:root {
+  --navy: #002d60;
+  --teal: #00828c;
+  --ink: #383d48;
+  --accent: #3d5b89;
+  --lavender: #f6f6fc;
+  --surface: #f5f5f5;
+  --border: #d7d7d7;
+  --gutter: clamp(16px, 4vw, 32px);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  color: var(--navy);
+  font-family: "DM Sans", sans-serif;
+}
+
+.site-header { border-top: 4px solid #383838; }
+
+.header-inner {
+  width: min(1440px, calc(100% - 2 * var(--gutter)));
+  min-height: 88px;
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.brand {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+}
+
+.brand-mark {
+  width: 25px;
+  height: 31px;
+  flex: none;
+  background: conic-gradient(from 75deg at 47% 56%, var(--navy) 0 48%, var(--teal) 48% 55%, #c5d7ef 55% 100%);
+  border-radius: 50% 50% 46% 46%;
+  clip-path: polygon(0 0, 100% 0, 100% 60%, 50% 100%, 0 60%);
+}
+
+.wordmark {
+  font-size: 32px;
+  font-weight: 800;
+  line-height: .95;
+}
+
+.wordmark span { color: var(--teal); }
+.tagline { font-size: 7px; line-height: 1.2; }
+
+.sections {
+  display: flex;
+  gap: clamp(12px, 2vw, 32px);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  color: var(--ink);
+  font-size: 14px;
+}
+
+.sections li {
+  padding-block: 16px;
+  border-bottom: 2px solid transparent;
+}
+
+.sections [aria-current="page"] {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.sign-in {
+  padding: 9px 24px;
+  color: white;
+  background: var(--accent);
+  border-radius: 999px;
+  box-shadow: 0 2px 4px #0003;
+  font-size: 14px;
+}
+
+.intro {
+  background: var(--lavender);
+  padding: clamp(36px, 4vw, 64px) var(--gutter) clamp(32px, 4vw, 50px);
+}
+
+.intro-inner {
+  max-width: 1312px;
+  margin-inline: auto;
+}
+
+h1 {
+  margin: 0 0 8px;
+  font-size: clamp(38px, 4vw, 58px);
+  font-weight: 800;
+  line-height: 1.15;
+}
+
+.intro p {
+  margin: 0;
+  font-size: clamp(17px, 1.8vw, 24px);
+  line-height: 1.4;
+}
+
+.dashboard-frame {
+  display: block;
+  max-width: calc(100% - 2 * var(--gutter));
+  margin: 24px auto 48px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+}
+
+@media (max-width: 680px) {
+  .header-inner {
+    flex-wrap: wrap;
+    gap: 4px 12px;
+    padding-top: 16px;
+  }
+
+  .sections {
+    order: 1;
+    width: 100%;
+    flex-wrap: wrap;
+    column-gap: 16px;
+    row-gap: 0;
+    font-size: 13px;
+  }
+
+  .sections li { padding-block: 10px; }
+  .sign-in { padding-inline: 16px; }
+}
